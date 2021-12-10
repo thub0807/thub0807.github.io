@@ -15,7 +15,7 @@
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
     </script>
-    // <!--
+   
   //   其他可选的模型：
   //     小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json
   //   萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
@@ -34,7 +34,7 @@
   //   https://unpkg.com/live2d-widget-model-nietzche@1.0.5/assets/nietzche.model.json
   //       https://unpkg.com/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json
   //           女学生： https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json
-  //   -->
+  // 
 </head>
 <body>
     <img src="zhidubao.png">
