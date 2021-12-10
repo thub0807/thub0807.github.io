@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>快来帮助我</title>
+    <title>快来帮帮我</title>
 
     <!-- L2Dwidget.js L2D网页动画人物 -->
     <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
@@ -15,7 +15,7 @@
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
     </script>
-   
+     <!--
   //   其他可选的模型：
   //     小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json
   //   萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
@@ -34,12 +34,16 @@
   //   https://unpkg.com/live2d-widget-model-nietzche@1.0.5/assets/nietzche.model.json
   //       https://unpkg.com/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json
   //           女学生： https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json
-  // 
+  //   -->
 </head>
 <body>
+    <center>
+    <img src="zhidubao.png" width="236" height="225">
+    <img src="weixin.png" width="236" height="225">
+    </center>
+
 </body>
 </html>
-
 
 You can use the [editor on GitHub](https://github.com/thub0807/thub0807.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
