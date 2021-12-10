@@ -37,8 +37,8 @@
   //   -->
 </head>
 <body>
-    <img src="image/zhidubao.png">
-    <img src="image/weixin.png">
+    <img src="zhidubao.png">
+    <img src="weixin.png">
 
 
 </body>
