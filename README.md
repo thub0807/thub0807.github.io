@@ -37,10 +37,6 @@
   // 
 </head>
 <body>
-    <img src="zhidubao.png">
-    <img src="weixin.png">
-
-
 </body>
 </html>
 
