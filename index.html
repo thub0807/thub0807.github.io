@@ -1,223 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>(。・∀・)ノ~&nbsp;&nbsp;&nbsp;&nbsp;DocLiu</title>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>给你的一封信</title>
-  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
-  <script>
-    L2Dwidget.init({
-      "model": { "jsonPath":"https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos":0.5, "vHeadPos":0.618 },
-      "display": { "position": "right", "width": 400, "height": 400, "hOffset": 0, "vOffset": 0 },
-      "mobile": { "show": true, "scale": 0.5 },
-      "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
-    });
-  </script>
-  <link type="text/css" rel="stylesheet" href="./file/default.css">
-  <script type="text/javascript" src="./file/jquery.min.js"></script>
-  <script type="text/javascript" src="./file/jscex.min.js"></script>
-  <script type="text/javascript" src="./file/jscex-parser.js"></script>
-  <script type="text/javascript" src="./file/jscex-jit.js"></script>
-  <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-  <script type="text/javascript" src="./file/jscex-async.min.js"></script>
-  <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-  <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-  <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
-  <style type="text/css">
-  </style>
-</head>
-<body>
-<div id="main">
-  <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
-  <audio autoplay="autoplay" height="100" width="100">
-    <source src="renxi.mp3" type="audio/mp3" />
-    <embed height="100" width="100" src="renxi.mp3" />
-  </audio>
-  <div id="wrap">
-    <div id="text">
-      <div id="code"> <font color="#FF0000"> <span class="say">亲爱的初一二十七班</span><br>
-        <span class="say"> 这是写给你们的网页，</span><br>
-        <span class="say"> 用来记录你们七年级的时光</span><br>
-        <span class="say">天行健,君子以自强不息</span><br>
-        <span class="say"> 立身以立学为先，立学以读书为本</span><br>
-        <span class="say">宝剑锋从磨砺出，梅花香自苦寒来</span><br>
-        <span class="say">人的一生，谁都可以创造出属于自己的独一无二的美丽风景;   </span><br>
-        <span class="say">每个行业的人都可以攀爬到风景无限的美丽高峰。</span><br>
-        <span class="say">学习可以给人以机遇。学习可以使你成为有准备的人。</span><br>
-        <span class="say">机遇对于每个人都是平等的，机遇偏爱有准备的人。 </span><br>
-        <span class="say"> 没有准备很难把握机遇，有了准备随时都有机遇。</span><br>
-        <span class="say">我们得到的'许多恩泽，都是学习创造的机遇。 </span><br>
-        <span class="say"><span class="space"></span> -- 你们的老师</span> </font>
-        <br />
-        <br />
+    <style>
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+      @keyframes blink-caret {
+        50% {
+          border-color: transparent;
+        }
+      }
 
-        </p>
+      .typeing {
+        font: 200% monospace;
+        font-size: 40px;
+        font-family: "楷体";
+        border-right: 0.08em solid;
+        width: 100ch;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(40, end),
+          blink-caret 0.5s step-end infinite alternate; //这里的alternate是为了让光标闪烁的正常一点
+      }
+    </style>
+    <style id="css">
+      #wrap {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #000;
+        margin: 100px auto;
+        border-radius: 50%;
+        position: relative;
+      }
+      #wrap ul {
+        margin: 0;
+        padding: 0;
+        height: 200px;
+        position: relative;
+        list-style: none;
+      }
+      #wrap ul li {
+        width: 2px;
+        height: 6px;
+        background: #000;
+        position: absolute;
+        left: 99px;
+        top: 0;
+        -webkit-transform-origin: center 100px;
+      }
+      /*#wrap ul li:nth-of-type(1){-webkit-transform: rotate(0);}
+        #wrap ul li:nth-of-type(2){-webkit-transform: rotate(6deg);}
+        #wrap ul li:nth-of-type(3){-webkit-transform: rotate(12deg);}
+        #wrap ul li:nth-of-type(4){-webkit-transform: rotate(18deg);}
+        #wrap ul li:nth-of-type(5){-webkit-transform: rotate(24deg);}
+        #wrap ul li:nth-of-type(6){-webkit-transform: rotate(30deg);}
+        #wrap ul li:nth-of-type(7){-webkit-transform: rotate(36deg);}
+        #wrap ul li:nth-of-type(8){-webkit-transform: rotate(42deg);}*/
+      #wrap ul li:nth-of-type(5n + 1) {
+        height: 12px;
+      }
+      #hour {
+        width: 6px;
+        height: 45px;
+        background: #000;
+        position: absolute;
+        left: 97px;
+        top: 55px;
+        -webkit-transform-origin: bottom;
+      }
+      #min {
+        width: 4px;
+        height: 65px;
+        background: #999;
+        position: absolute;
+        left: 98px;
+        top: 35px;
+        -webkit-transform-origin: bottom;
+      }
+      #sec {
+        width: 2px;
+        height: 80px;
+        background: red;
+        position: absolute;
+        left: 99px;
+        top: 20px;
+        -webkit-transform-origin: bottom;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        left: 90px;
+        top: 90px;
+      }
+    </style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      .clear {
+        clear: both;
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button2 {
+        background-color: #008cba;
+      } /* Blue */
+      .button3 {
+        background-color: #f44336;
+      } /* Red */
+      .button4 {
+        background-color: #e7e7e7;
+        color: black;
+      } /* Gray */
+      .button5 {
+        background-color: #555555;
+      } /* Black */
+      .header {
+        background-color: #787f87;
+        color: white;
+        height: 100%;
+        text-align: center;
+        padding: 25px;
+        margin: auto;
+        width: 100%;
+      }
+      .headtop {
+        float: none;
+        width: 110px;
+        height: 20px;
+
+        background-color: aliceblue;
+      }
+      .headerleft {
+        float: left;
+        width: 300px;
+        height: auto;
+        display: block;
+        background-color: gray;
+      }
+      .headermiddle {
+        float: left;
+        width: 500px;
+        height: auto;
+        background-color: gray;
+      }
+      .headerright {
+        float: left;
+        width: 300px;
+        background-color: gray;
+      }
+      .footer {
+        background-color: #444;
+        color: white;
+        padding: 15px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+      }
+      .centre {
+        text-align: center;
+        background-color: white;
+        padding: 10px;
+        height: 100px;
+        float: right;
+      }
+      .topmenu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #777;
+      }
+      .topmenu li {
+        float: left;
+      }
+      .topmenu li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+      }
+      .topmenu li a:hover {
+        background-color: #222;
+      }
+      .topmenu li a.active {
+        color: white;
+        background-color: #4caf50;
+      }
+      .column {
+        float: left;
+        height: 675px;
+        padding: 15px;
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .sidemenu {
+        width: 25%;
+      }
+      .content {
+        width: 75%;
+      }
+      .side {
+        width: 100%;
+        height: 250px;
+      }
+      .sidemenu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        height: auto;
+      }
+      .sidemenu li a {
+        margin-bottom: 4px;
+        display: block;
+        padding: 8px;
+        background-color: #eee;
+        text-decoration: none;
+        color: #666;
+      }
+      .sidemenu li a:hover {
+        background-color: #555;
+        color: white;
+      }
+      .sidemenu li a.active {
+        background-color: #008cba;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="me.js"></script>
+    <ul class="topmenu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="book.html">悠哉生活</a></li>
+      <li><a href="think.html">思考</a></li>
+      <li><a href="https://blog.csdn.net/qq_41722524">我のCSDN</a></li>
+      <li><a href="me.html">关于我</a></li>
+    </ul>
+
+    <div class="clearfix">
+      <div class="column sidemenu">
+        <ul>
+          <li>
+            <a href="solar.html" style="background: #14ceeb"
+              ><strong>点进去可以看到太阳系哦</strong></a
+            >
+          </li>
+          <li>
+            <a href="" class="active"><b>我的博客</b></a>
+          </li>
+          <li>
+            <a href="thub0807.github.io\index.html"><b> 实习经历</b></a>
+          </li>
+          <li>
+            <a href="ds.html"><b>数据结构</b></a>
+          </li>
+          <li>
+            <a href="os.html"><b>操作系统</b></a>
+          </li>
+          <li>
+            <a href="internet.html"><b>计算机网络</b></a>
+          </li>
+          <li>
+            <a href="computer.html"><b>计算机组成原理</b></a>
+          </li>
+        </ul>
+        <div class="side">
+          <div id="wrap">
+            <ul id="list">
+              <!--<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>-->
+            </ul>
+            <div id="hour"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+            <div class="icon"></div>
+          </div>
+          <script>
+            var oList = document.getElementById("list"); //获取到刻度
+            var oCss = document.getElementById("css");
+            var oHour = document.getElementById("hour"); //获取时针
+            var oMin = document.getElementById("min"); //获取分针
+            var oSec = document.getElementById("sec"); //获取秒针
+            var oLi = "";
+            var sCss = "";
+            for (var i = 0; i < 60; i++) {
+              //一个表盘总共是60个刻度
+              sCss +=
+                "#wrap ul li:nth-of-type(" +
+                (i + 1) +
+                "){-webkit-transform: rotate(" +
+                i * 6 +
+                "deg);}";
+              oLi += "<li></li>";
+            }
+            oList.innerHTML = oLi;
+            oCss.innerHTML += sCss; //表盘刻度渲染完成
+            toTime();
+            setInterval(toTime, 1000);
+            function toTime() {
+              var oDate = new Date(); //获取当前时间
+              var iSec = oDate.getSeconds(); //获取当前秒
+              var iMin = oDate.getMinutes() + iSec / 60; //获取当前分
+              var iHour = oDate.getHours() + iMin / 60; //获取当前时
+              oSec.style.WebkitTransform = "rotate(" + iSec * 6 + "deg)"; //秒针转动角度1秒6度 (表盘一圈360度一圈60秒所以一秒6度)
+              oMin.style.WebkitTransform = "rotate(" + iMin * 6 + "deg)"; //分钟转动角度1分6度 (表盘一圈360度一圈60分所以一分6度)
+              oHour.style.WebkitTransform = "rotate(" + iHour * 30 + "deg)"; //时针转动角度一小时30度(表盘一圈360度一圈12小时所以一小时30度)
+            }
+          </script>
+        </div>
+      </div>
+
+      <div class="column content">
+        <div class="header">
+          <br /><br />
+          <div class="headerleft"></div>
+          <div class="headermiddle"></div>
+          <div class="headerright"></div>
+          <div class="clear"></div>
+          <br /><br /><br />
+          <img src="photo/4.gif" />
+          <br /><br /><br /><br /><br /><br />
+          <h2
+            style="
+              font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times,
+                'Times New Roman', 'serif';
+            "
+          >
+            我时常回到童年，用一片童心来思考问题，很多烦恼的问题就变得易解。<br /><br />
+          </h2>
+          <h3 style="text-align: right">
+            《一只特立独行的🐖》————王小波&nbsp;
+          </h3>
+        </div>
       </div>
     </div>
-    <div id="clock-box">
-      <span class="STYLE1"></span><font color="#33CC00">与你们相处</font>
-      <span class="STYLE1">已经是……</span>
-      <div id="clock"></div>
+
+    <div class="centre">
+      <p class="typeing">
+        Whatever your past has been, you have a spotless future🚀.
+      </p>
     </div>
-    <canvas id="canvas" width="1100" height="680"></canvas>
-  </div>
+    <br />
+    <div class="footer" style="text-align: center">
+      <a href=""> <button class="button">❤</button></a>
+      <button class="button button2">❤❤</button>
+      <button class="button button3">❤❤❤</button>
+      <button class="button button4">😄</button>
+      <button class="button button4">😁</button>
 
-</div>
+      <button class="button button4">😊</button>
+      <strong>Archie's homepage</strong>
+      <button class="button button5">😁</button>
 
-<script>
-</script>
-
-<script>
-  (function(){
-    var canvas = $('#canvas');
-
-    if (!canvas[0].getContext) {
-      $("#error").show();
-      return false;        }
-
-    var width = canvas.width();
-    var height = canvas.height();
-    canvas.attr("width", width);
-    canvas.attr("height", height);
-    var opts = {
-      seed: {
-        x: width / 2 - 20,
-        color: "rgb(190, 26, 37)",
-        scale: 2
-      },
-      branch: [
-        [535, 680, 570, 250, 500, 200, 30, 100, [
-          [540, 500, 455, 417, 340, 400, 13, 100, [
-            [450, 435, 434, 430, 394, 395, 2, 40]
-          ]],
-          [550, 445, 600, 356, 680, 345, 12, 100, [
-            [578, 400, 648, 409, 661, 426, 3, 80]
-          ]],
-          [539, 281, 537, 248, 534, 217, 3, 40],
-          [546, 397, 413, 247, 328, 244, 9, 80, [
-            [427, 286, 383, 253, 371, 205, 2, 40],
-            [498, 345, 435, 315, 395, 330, 4, 60]
-          ]],
-          [546, 357, 608, 252, 678, 221, 6, 100, [
-            [590, 293, 646, 277, 648, 271, 2, 80]
-          ]]
-        ]]
-      ],
-      bloom: {
-        num: 700,
-        width: 1080,
-        height: 650,
-      },
-      footer: {
-        width: 1200,
-        height: 5,
-        speed: 10,
-      }
-    }
-
-    var tree = new Tree(canvas[0], width, height, opts);
-    var seed = tree.seed;
-    var foot = tree.footer;
-    var hold = 1;
-
-    canvas.click(function(e) {
-      var offset = canvas.offset(), x, y;
-      x = e.pageX - offset.left;
-      y = e.pageY - offset.top;
-      if (seed.hover(x, y)) {
-        hold = 0;
-        canvas.unbind("click");
-        canvas.unbind("mousemove");
-        canvas.removeClass('hand');
-      }
-    }).mousemove(function(e){
-      var offset = canvas.offset(), x, y;
-      x = e.pageX - offset.left;
-      y = e.pageY - offset.top;
-      canvas.toggleClass('hand', seed.hover(x, y));
-    });
-
-    var seedAnimate = eval(Jscex.compile("async", function () {
-      seed.draw();
-      while (hold) {
-        $await(Jscex.Async.sleep(10));
-      }
-      while (seed.canScale()) {
-        seed.scale(0.95);
-        $await(Jscex.Async.sleep(10));
-      }
-      while (seed.canMove()) {
-        seed.move(0, 2);
-        foot.draw();
-        $await(Jscex.Async.sleep(10));
-      }
-    }));
-
-    var growAnimate = eval(Jscex.compile("async", function () {
-      do {
-        tree.grow();
-        $await(Jscex.Async.sleep(10));
-      } while (tree.canGrow());
-    }));
-
-    var flowAnimate = eval(Jscex.compile("async", function () {
-      do {
-        tree.flower(2);
-        $await(Jscex.Async.sleep(10));
-      } while (tree.canFlower());
-    }));
-
-    var moveAnimate = eval(Jscex.compile("async", function () {
-      tree.snapshot("p1", 240, 0, 610, 680);
-      while (tree.move("p1", 500, 0)) {
-        foot.draw();
-        $await(Jscex.Async.sleep(10));
-      }
-      foot.draw();
-      tree.snapshot("p2", 500, 0, 610, 680);
-
-      // 会有闪烁不得意这样做, (＞﹏＜)
-      canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-      canvas.css("background", "#ffe");
-      $await(Jscex.Async.sleep(300));
-      canvas.css("background", "none");
-    }));
-
-    var jumpAnimate = eval(Jscex.compile("async", function () {
-      var ctx = tree.ctx;
-      while (true) {
-        tree.ctx.clearRect(0, 0, width, height);
-        tree.jump();
-        foot.draw();
-        $await(Jscex.Async.sleep(25));
-      }
-    }));
-
-    var textAnimate = eval(Jscex.compile("async", function () {
-      var together = new Date();
-      together.setFullYear(2022,2, 4); 			//时间年月日
-      together.setHours(16);						//小时
-      together.setMinutes(53);					//分钟
-      together.setSeconds(0);					//秒前一位
-      together.setMilliseconds(2);				//秒第二位
-
-      $("#code").show().typewriter();
-      $("#clock-box").fadeIn(500);
-      while (true) {
-        timeElapse(together);
-        $await(Jscex.Async.sleep(1000));
-      }
-    }));
-
-    var runAsync = eval(Jscex.compile("async", function () {
-      $await(seedAnimate());
-      $await(growAnimate());
-      $await(flowAnimate());
-      $await(moveAnimate());
-
-      textAnimate().start();
-
-      $await(jumpAnimate());
-    }));
-
-    runAsync().start();
-  })();
-</script></body></html>
+      <button class="button button5">😎</button>
+      <button class="button button5">🤭</button>
+      <button class="button">❤❤❤</button>
+      <button class="button button2">❤❤</button>
+      <button class="button button3">❤</button>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script
+      src="https://myhkw.cn/player/js/player.js"
+      id="myhk"
+      key="demo"
+      m="1"
+    ></script>
+  </body>
+</html>
